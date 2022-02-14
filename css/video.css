@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+header
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 100px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .logo
+{
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.toggle
+{
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: url(https://i.ibb.co/HrfVRcx/menu.png);
+  background-repeat: no-repeat;
+  background-size: 30px;
+  background-position: center;
+  cursor: pointer;
+}
+.toggle.active
+{
+  background: url(https://i.ibb.co/rt3HybH/close.png);
+  background-repeat: no-repeat;
+  background-size: 25px;
+  background-position: center;
+  cursor: pointer;
+}
+.showcase
+{
+  position: absolute;
+  right: 0;
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  transition: 0.5s;
+  z-index: 2;
+}
+.showcase.active
+{
+  right: 300px;
+}
+
+.showcase video
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+.overlay
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #03a9f4;
+  mix-blend-mode: overlay;
+}
+.text
+{
+  position: relative;
+  z-index: 10;
+}
+
+.text h2
+{
+  font-size: 5em;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+.text h3
+{
+  font-size: 4em;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+.text p
+{
+  font-size: 1.1em;
+  color: #fff;
+  margin: 20px 0;
+  font-weight: 400;
+  max-width: 700px;
+}
+.text a
+{
+  display: inline-block;
+  font-size: 1em;
+  background: #fff;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 10px;
+  color: #111;
+  letter-spacing: 2px;
+  transition: 0.2s;
+}
+.text a:hover
+{
+  letter-spacing: 6px;
+}
+.social
+{
+  position: absolute;
+  z-index: 10;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social li
+{
+  list-style: none;
+}
+.social li a
+{
+  display: inline-block;
+  margin-right: 20px;
+  filter: invert(1);
+  transform: scale(0.5);
+  transition: 0.5s;
+}
+.social li a:hover
+{
+  transform: scale(0.5) translateY(-15px);
+}
+.menu
+{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu ul
+{
+  position: relative;
+}
+.menu ul li
+{
+  list-style: none;
+}
+.menu ul li a
+{
+  text-decoration: none;
+  font-size: 24px;
+  color: #111;
+}
+.menu ul li a:hover
+{
+  color: #03a9f4; 
+}
+
+@media (max-width: 991px)
+{
+  .showcase,
+  .showcase header
+  {
+    padding: 40px;
+  }
+  .text h2
+  {
+    font-size: 3em;
+  }
+  .text h3
+  {
+    font-size: 2em;
+  }
+}
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans");
+
+
+.player {
+    position: relative;
+    right: 5%;
+}
+
+.player .info {
+    position: absolute;
+    height: 60px;
+    top: 0;
+    opacity: 0;
+    left: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 5px 15px 5px 110px;
+    border-radius: 15px;
+    transition: all 0.5s ease;
+}
+
+.player .info .artist,
+.player .info .name {
+    display: block;
+}
+
+.player .info .artist {
+    color: #222;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.player .info .name {
+    color: #999;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.player .info .progress-bar {
+    background-color: #ddd;
+    height: 2px;
+    width: 100%;
+    position: relative;
+}
+
+.player .info .progress-bar .bar {
+    position: relative;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #1eabff;
+    width: 10%;
+    transition: all 0.2s ease;
+}
+
+.player .info.active {
+    top: -60px;
+    opacity: 1;
+    transition: all 0.5s ease;
+}
+
+.player .control-panel {
+    position: relative;
+    background-color: #fff;
+    border-radius: 15px;
+    width: 300px;
+    height: 80px;
+    z-index: 5;
+    box-shadow: 0 20px 20px 5px rgba(183, 212, 245, 0.3);
+}
+
+.player .control-panel .album-art {
+    position: absolute;
+    left: 20px;
+    top: -15px;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    box-shadow: 0 20px 20px 5px rgba(0, 0, 0, 0);
+    transform: scale(1);
+    transition: all 0.5s ease;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.player .control-panel .album-art::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80px;
+}
+
+.player .control-panel.active .album-art {
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0).2;
+    transform: scale(1.2);
+    transition: all o.5s ease;
+}
+
+.player .control-panel .controls {
+    display: flex;
+    justify-content: flex-end;
+    height: 80px;
+    padding: 0 15px
+}
+
+.player .control-panel .controls .prev,
+.player .control-panel .controls .play,
+.player .control-panel .controls .next {
+    width: 55px;
+    height: auto;
+    border-radius: 10px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    margin: 5px 0;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3 ease;
+}
+
+.player .control-panel .controls .prev:hover,
+.player .control-panel .controls .play:hover,
+.player .control-panel .controls .next:hover {
+    background-color: #eee;
+    transition: background-color 0.3s ease;
+}
+
+.player .control-panel .controls .prev {
+    background-image: url(../img/back.svg);
+}
+
+.player .control-panel .controls .play {
+    background-image: url(../img/play.svg);
+}
+
+.player .control-panel .controls .next {
+    background-image: url(../img/next.svg);
+}
+
+.player .control-panel.active .controls .play {
+    background-image: url(../img/stop.svg);
+}
